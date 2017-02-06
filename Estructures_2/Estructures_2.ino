@@ -16,13 +16,17 @@ int tempAigua = 101; //estavlexi variable tempAigua amb un valor int de 101
 
 //************************** SETUP ******************************
 
-void setup() {                 // configura el final de salida
- Serial.begin(9600);     // inicia comunicacio serie velocitat 9600
-
-  if ( tempAigua < 100)// si variable tempAigua inferior a 100... 
-   {
+void setup() 
+{                 // configura el final de salida
+  Serial.begin(9600);     // inicia comunicacio serie velocitat 9600
+  if ( tempAigua < 90)// si variable tempAigua inferior a 90... 
+  {
     Serial.print("Aigua encara no bull"); //envia missatge entre cometes a monitor serie
-}
+  }
+  else if (tempAigua<100 && tempAigua>=90) //en el cas de que tempAigua igual o superior a 90 pero inferior a 100
+  {
+    Serial.print("Aigua apunt de bullir"); //envia missatge entre cometes a monitor serie
+  }
 else //en qualsevol altre cas 
   {
     Serial.print("Aigua supera els 100C, esta bullint!"); //envia missatge entre cometes a monitor serie
