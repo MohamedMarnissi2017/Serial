@@ -12,33 +12,20 @@
 //*********************** VARIABLES *****************************
 
 
-int sensorReading = 0; //Estableix variable "sensorReading" amb un valor int
+int comptar = 22; //Estableix variable "comptar" amb un valor int
 
 //************************** SETUP ******************************
 
 void setup()
 {
   Serial.begin(9600);// Inicia comunicacio serie a velocitat 9600
-  Serial.print("The day is ");// Inprimeix al monitor serie al que hi ha escrit entre les cometes en aquest ca inprimira The day is
-
-  switch (sensorReading) //inicia funcio switch la qual variara de cas en funcio del valor de la variable sensorReading
+   Serial.print("Ara comptare de 0 a ");//Imprimeix a monitor serie la frase "Ara comptares de 0 a"
+  Serial.println(comptar);//Imprimeix a monitor serie valor de la variable "comptar"
+  for (int i=0; i <= comptar; i++)
   {
-    case 0:
-      Serial.println("dark");//Si la variable te un valor de 0 inprimeix dark al monitor serie
-      break;
-    case 1:
-      Serial.println("dim");//Si la variable te un valor de 1 inprimeix dark al monitor serie
-      break;
-    case 2:
-      Serial.println("medium");//Si la variable te un valor de 2 inprimeix dark al monitor serie
-      break;
-    case 3:
-      Serial.println("bright");//Si la variable te un valor de 3 inprimeix dark al monitor serie
-      break;
-    default:
-      Serial.println("... I don't know!!!");//Si la variable no te cap dels valor anterior imprimeix ... I don't know!!!
-      //Com que el programa esta escrit sobre setup nomes es fara un cop
-  }
+    Serial.print(i);
+    Serial.print("-");
+  } 
 }
 
 //*************************** LOOP ******************************
