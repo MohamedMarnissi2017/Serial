@@ -21,8 +21,9 @@ void setup()
 {
   Serial.begin(9600);// Inicia comunicacio serie a velocitat 9600
   Serial.println("Entra el valor de r1 i r2 (separats per una coma)");//Imprimeix a monitor serie la frase "Entra el valor de r1 i r2 (separats per una coma)"
+  Serial.println();
 
-  }
+}
 
 //*************************** LOOP ******************************
 
@@ -33,19 +34,22 @@ void loop() {
     Serial.print(r1);
     Serial.print("ohms   ");
     r2 = Serial.parseInt();
-     Serial.print("r2=");
+    Serial.print("r2=");
     Serial.print(r2);
     Serial.println("ohms   ");
-  }
-    if (Serial.read() == '\n') { //look for newline. Is the end of your sentence
-     Serial.print("rSerie=");
-    Serial.print(r1+r2);
+    Serial.println();
+    float rSerie = r1 + r2;
+    float rParallel = 1 / (r1 + r2);
+    if (Serial.read() == '\n')
+      Serial.print("rSerie=");
+    Serial.print(rSerie);
     Serial.print("ohms   ");
-     Serial.print("rParallel=");
-    Serial.print(1/r1+r2);
-    Serial.print("ohms   ");                   
-     Serial.print("Entra el valor de r1 i r2 (separats per una coma)");//Imprimeix a monitor serie la frase "Entra el valor de r1 i r2 (separats per una coma)"
-    }
+    Serial.print("rParallel=");
+    Serial.print(rParallel);
+    Serial.println("ohms   ");
+    Serial.println();
+    Serial.print("Entra el valor de r1 i r2 (separats per una coma)");//Imprimeix a monitor serie la frase "Entra el valor de r1 i r2 (separats per una coma)"
+  }
 }
 
 
