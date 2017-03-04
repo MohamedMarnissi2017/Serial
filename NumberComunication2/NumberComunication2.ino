@@ -3,7 +3,7 @@
 **                          TÍTOL:                             **
 **                   NumberComunication2                       **
 **                                                             **
-**  NOM: Mohamed el Marnissi                  DATA: 27/02/2017 **
+**  NOM: Mohamed el Marnissi                  DATA: 04/03/2017 **
 ****************************************************************/
 //************************ INCLUDE ******************************
 
@@ -28,27 +28,27 @@ void setup()
 
 void loop() {
   while (Serial.available() > 0) {  //inicia funcio while amb la condiciono seguent: si hi ha algun missatge al canal serei el llegeix, si aquest es superior a 0 es compleix la condicio
-    numero = Serial.parseInt();// La variable r1 sera igual al missatge en valor int que arribi per el canal serie
-    PS = numero % 2;
-    if (PS == 1)
-      {Serial.print("El numero ");//Imprimeix a monitor serie la frase "r1="
-    Serial.print(numero);//Imprimeix a monitor serie el valor de r1
-    Serial.print(" es senar");//Imprimeix a monitor serie la frase "ohms  "
-    Serial.println();//obre linia nova
-        Serial.println("entre el teu numero");//Imprimeix a monitor serie la frase "Entra un numero"
-          
-      }
-    else
-     { Serial.print("El numero  ");//Imprimeix a monitor serie la frase "r1="
-    Serial.print(numero);//Imprimeix a monitor serie el valor de r1
-    Serial.println("  es parell");//Imprimeix a monitor serie la frase "ohms  "
-    Serial.println();//obre linia nova
-    Serial.println("entre el teu numero");//Imprimeix a monitor serie la frase "Entra un numero"
+    numero = Serial.parseInt();// La variable numero sera igual al missatge en valor int que arribi per el canal serie
+    PS = numero % 2;// Executa operacio de modul de variable numero partit de 2
+    if (PS == 1)//Inicia funcio if amb la condicio si variable PS es igual 1 , condicio es compleix
+    { Serial.print("El numero ");//Imprimeix a monitor serie la frase "el numero"
+      Serial.print(numero);//Imprimeix a monitor serie el valor de numero
+      Serial.println(" es senar");//Imprimeix a monitor serie la frase "es senar "
       Serial.println();//obre linia nova
-     }
-    if (Serial.read() == '\n')//llegeix linia nova
-     {}
+      Serial.println("entre el teu numero");//Imprimeix a monitor serie la frase "Entra el treu numero"
+      Serial.println();//obre linia nova
     }
+    else//En qualsevol altre cas..
+    { Serial.print("El numero  ");//Imprimeix a monitor serie la frase "El numero"
+      Serial.print(numero);//Imprimeix a monitor serie el valor de numero
+      Serial.println("  es parell");//Imprimeix a monitor serie la frase "es parell"
+      Serial.println();//obre linia nova
+      Serial.println("entre el teu numero");//Imprimeix a monitor serie la frase "Entra el teu numero"
+      Serial.println();//obre linia nova
+    }
+    if (Serial.read() == '\n')//llegeix linia nova, Finalitza lectura...
+    {}
+  }
 
 }
 
