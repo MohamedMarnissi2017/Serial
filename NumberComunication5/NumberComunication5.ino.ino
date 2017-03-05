@@ -37,7 +37,7 @@ void loop() {
         Serial.println();//obre linia nova
         Serial.println("Quina mida te el cargol en cm?");//Imprimeix a monitor serie la frase "Quina mida te el cargol en cm?"
         Serial.println();//obre linia nova
-        mida = 0;
+        mida = 0;//variable mida sera igual a 0
       }
        if (mida>=3 && mida<5)//inicia funcio if amb la condicio variable mida superior o igual a 3 pero inferior a 5
       { 
@@ -47,7 +47,7 @@ void loop() {
         Serial.println();//obre linia nova
         Serial.println("Quina mida te el cargol en cm?");//Imprimeix a monitor serie la frase "Quina mida te el cargol en cm?"
         Serial.println();//obre linia nova
-        mida = 0;
+        mida = 0;//variable mida sera igual a 0
       }
        if (mida>=5 && mida<8)//inicia funcio if amb la condicio variable mida superior o igual a 5 pero inferior a 8
       { 
@@ -57,7 +57,7 @@ void loop() {
         Serial.println();//obre linia nova
         Serial.println("Quina mida te el cargol en cm?");//Imprimeix a monitor serie la frase "Quina mida te el cargol en cm?"
         Serial.println();//obre linia nova
-        mida = 0;
+        mida = 0;//variable mida sera igual a 0
       }
        if (mida>=8 && mida<=10)//inicia funcio if amb la condicio variable mida superior o igual a 8 pero inferior o igual  a 10
       { 
@@ -67,15 +67,15 @@ void loop() {
         Serial.println();//obre linia nova
         Serial.println("Quina mida te el cargol en cm?");//Imprimeix a monitor serie la frase "Quina mida te el cargol en cm?"
         Serial.println();//obre linia nova
-        mida = 0;
+        mida = 0;//variable mida sera igual a 0
       }
-      if(mida>10)
+      if(mida>10)//inicia funcio if amb la condicio variable mida superior a 10
       {
         Serial.println("La mida del cargol introduida es incorrecta.");//Imprimeix a monitor serie la frase "La mida del cargol introduida es incorrecta."
           Serial.println();//obre linia nova
         Serial.println("Quina mida te el cargol en cm?");//Imprimeix a monitor serie la frase "Quina mida te el cargol en cm?"
         Serial.println();//obre linia nova
-        mida = 0;
+        mida = 0;//variable mida sera igual a 0
       }
       if (Serial.read() == '\n')//llegeix linia nova, Finalitza lectura serie...
       {}
